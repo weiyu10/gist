@@ -58,7 +58,10 @@ if __name__ == "__main__":
                                    result_queue))
 
     result = []
-    for i in range(src_port_count):
-        result.append(result_queue.get())
+    try:
+        for i in range(src_port_count):
+            result.append(result_queue.get())
+    except KeyboardInterrupt:
+        pass
     for net_path in list(set(result)):
         print net_path
