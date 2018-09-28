@@ -51,17 +51,18 @@ if __name__ == "__main__":
     for i in range(process_num):
         per_process_src_port_base = src_port_base + \
             (i * per_process_src_port_count)
-        p.apply_async(trace, args=(per_process_src_port_base,
-                                   per_process_src_port_count,
-                                   dst_ip,
-                                   dst_port,
-                                   result_queue))
+        result = p.apply_async(trace, args=(per_process_src_port_base,
+                                           per_process_src_port_count,
+                                           dst_ip,
+                                           dst_port,
+                                           result_queue))
 
     result = []
     try:
         for i in range(src_port_count):
-            result.append(result_queue.get())
-    except KeyboardInterrupt:
+            result.append(result_queue.get(timeout=1))
+    except:
         pass
+    result.get()
     for net_path in list(set(result)):
         print net_path
