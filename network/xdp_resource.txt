@@ -1,0 +1,11 @@
+http://vger.kernel.org/lpc-networking2018.html#session-1
+
+https://www.slideshare.net/InfoQ/xdp-in-practice-ddos-mitigation-cloudflare
+
+# ovs-ebpf-lpc18-presentation.pdf
+### 主要内容介绍了基于EBPF实现的ovs datapath和AF_XDP技术
+
+|    文件名    | 主要内容 |
+| ------------------------------- | --------------------------------------------- |
+| ovs-ebpf-lpc18-presentation.pdf |  介绍了基于EBPF实现的ovs datapath和AF_XDP技术 |
+| https://www.kernel.org/doc/html/v4.18/networking/af_xdp.html       |  介绍AF_XDP |
